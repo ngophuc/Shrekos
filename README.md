@@ -1,4 +1,5 @@
 # Shrekos
+<<<<<<< HEAD
 
 =======
 Gauffre Elie
@@ -12,3 +13,8 @@ khattouAdel
 
 
 
+=======
+elinabouquet
+Gauffre Elie
+Thomas Puibusque
+>>>>>>> 5e3be402a1e8f9cd4b8059026663ec5ff0961f7d
