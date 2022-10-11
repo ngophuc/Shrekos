@@ -3,11 +3,11 @@ elinabouquet
 Gauffre Elie
 Thomas Puibusque
 
-il faut écrire pull pour importer la bibliothèque
+il faut Ã©crire pull pour importer la bibliothÃ¨que
 
 supprimer un tag:
- git push --delete origin
+ git push --delete origin <name>
 
-créer un tag:
+crÃ©er un tag:
 git tag -d <name>
 git push --tags
