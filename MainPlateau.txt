@@ -1,0 +1,14 @@
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		int hauteur=11;
+		int longeur=11;
+		
+		Plateau p = new Plateau(hauteur, longeur);
+		
+		System.out.println(p.getPlateau());	            	 	            	 
+		System.out.println(p.getObstacles());	            	 
+	}
+}
+
