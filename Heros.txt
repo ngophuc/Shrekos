@@ -1,0 +1,19 @@
+package Position;
+
+import java.util.Scanner;
+
+public class Heros extends personnage {
+	
+	public Heros (int[] coord) {
+		super(coord);
+	}
+	
+	public void deplacement_heros() {
+		System.out.println("Saisissez direction heros (z,q,s,d)");
+		Scanner sc = new Scanner(System.in);
+		String cmd;
+		cmd = sc.nextLine();
+		deplacement(cmd);
+	}
+
+}

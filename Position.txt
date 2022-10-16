@@ -1,0 +1,18 @@
+package Position;
+
+
+public class Position {
+	public int[] coord;
+
+	public Position(int[] coord) {
+		this.coord= coord;
+	}
+
+	public int[] getCoord(){
+		return coord;
+	}
+
+	public void setCoord(int[] coord){
+		this.coord=coord;
+	}
+}
