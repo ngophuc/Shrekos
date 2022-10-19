@@ -1,10 +1,11 @@
 package Position;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Monstre extends personnage {
 	
-	public Monstre (int[] coord) {
+	public Monstre (ArrayList<Integer> coord) {
 		super(coord);
 	}
 	
