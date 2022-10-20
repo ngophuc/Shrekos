@@ -1,0 +1,40 @@
+package Position;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Personnage extends Position {
+	private int vie;
+	private int attaques;
+	public personnage (ArrayList<Integer> coord,int vie,int attaques) {
+		super(coord);		this.vie=vie;		this.attaques=attaques;
+	}
+	
+	public void deplacement(ArrayList<Integer> coord,String cmd) {
+			if(cmd.equals("z")) {
+				coord[1]=coord[1]+1;
+			}
+			if(cmd.equals("q")) {
+				coord[0]=coord[0]-1;
+			}
+			if(cmd.equals("s")) {
+				coord[1]=coord[1]-1;
+			}
+			if(cmd.equals("d")) {
+				coord[0]=coord[0]+1;
+			}
+
+		
+	}
+}
+
+	
+public boolean mouvPossible(ArrayList<List<Integer>> plateau, ArrayList<Integer> coord) {
+		boolean boule=true;
+		for (List<Integer> element : plateau) {
+			if (element.equals(coord))
+			boule=false;
+		}
+		return boule;
+}

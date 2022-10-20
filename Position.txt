@@ -1,0 +1,18 @@
+package Position;
+
+import java.util.ArrayList;
+
+public class Position {
+	
+	private ArrayList<Integer> coord;
+
+	public Position(ArrayList<Integer> coord) {
+		this.coord= coord;
+	}
+	public ArrayList<Integer> getCoord(){
+		return coord;
+	}
+	public void setCoord(ArrayList<Integer> coord){
+		this.coord=coord;
+	}
+}
