@@ -8,10 +8,15 @@ Backlog complet
 - Les monstres se déplacent de manière intelligente en essayant d’attraper le héros. Les fantômes sont des monstres qui peuvent traverser les murs.
 - Le héros peut attaquer les montres sur la case adjacente.
 - Les deux perdent des points de vie.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SPRINT 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Backlog sprint 1
 - Générer un labyrinthe avec obstacles par défaut + trésor
 - Version texte du déplacement guidé par le terminal qui renvoie la position du héros et celle du monstre. Possibilité pour le perso de pas bouger.
-- Créer un monstre qui tue le personnage sans graphisme : déplacement aléatoire + tue le personnage si rencontre 
+- Créer un monstre qui tue le personnage sans graphisme : déplacement aléatoire + tue le personnage si rencontre
+ 
+
 Répartition des tâches
 - S41 : Adel (position et personnages)
 - S41-42 : Elina (plateau)
@@ -19,6 +24,40 @@ Répartition des tâches
 - S41-42-43 : Thomas (gestion du main, Objet et trésor)
 - S44 : retard+bonus
 - S45-46 : préparation sprint 2
+
+Rétrospective:
+- Labyrinthe et obstacle par défault ok + trésor aléatoire
+- déplacement ok. Si autre touche que D G H B le perso bouge pas et le monstre se déplace quand même
+- monstre ok.
+- main renvoie position du monstre, trésors, héros.
+
+Diagramme de classe à mettre à jour:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SPRINT 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Backlog sprint 2:
+- plateau: obstacle aléatoire + en fonction du niveau (taille fixe, nb d'obstacle qui change)
+- faire graphiquement le jeu
+- faire une classe si monstre attaque le perso perd des vie (diff monstres en fct du niveau 1 qui attaque et 1 qui traverse les murs+attaque)
+- faire pop un monstre de facon aléatoire en respectant un périmètre autour du héros
+- ajouter aussi un périmètre autour du trésor
+
+
+Répartition des tâches:
+- plateau: Elina
+- graphisme: Elie
+- périmètre: Adel
+- monstre: Thomas
+
+
+Diagramme de classe:
+- ajouter: fantome/monstre basique
+- ajouter les méthodes
+
+
+
+
+
 
 
 
