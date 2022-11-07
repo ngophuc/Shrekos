@@ -1,24 +1,58 @@
 Backlog complet
-- Un héros est placé sur le plateau de jeu et peu s’y déplacer à l’intérieur.
-- Le labyrinthe est généré en fonction du niveau sélectionné. 4) Certains cases du labyrinthe sont spéciales : 
-* trésor : si le héros arrive sur la case il a gagné le jeu
-* pièges : quand un personnage arrive sur la case il subit des dégâts
-* magiques : si un personnage arrive sur la case un effet est déclenché
-* passages : un personnage qui arrive sur la case est téléporté à un autre endroit
-- Les monstres se déplacent de manière intelligente en essayant d’attraper le héros. Les fantômes sont des monstres qui peuvent traverser les murs.
-- Le héros peut attaquer les montres sur la case adjacente.
+- Un hÃ©ros est placÃ© sur le plateau de jeu et peu sâ€™y dÃ©placer Ã  lâ€™intÃ©rieur.
+- Le labyrinthe est gÃ©nÃ©rÃ© en fonction du niveau sÃ©lectionnÃ©. 4) Certains cases du labyrinthe sont spÃ©ciales : 
+* trÃ©sor : si le hÃ©ros arrive sur la case il a gagnÃ© le jeu
+* piÃ¨ges : quand un personnage arrive sur la case il subit des dÃ©gÃ¢ts
+* magiques : si un personnage arrive sur la case un effet est dÃ©clenchÃ©
+* passages : un personnage qui arrive sur la case est tÃ©lÃ©portÃ© Ã  un autre endroit
+- Les monstres se dÃ©placent de maniÃ¨re intelligente en essayant dâ€™attraper le hÃ©ros. Les fantÃ´mes sont des monstres qui peuvent traverser les murs.
+- Le hÃ©ros peut attaquer les montres sur la case adjacente.
 - Les deux perdent des points de vie.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SPRINT 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Backlog sprint 1
-- Générer un labyrinthe avec obstacles par défaut + trésor
-- Version texte du déplacement guidé par le terminal qui renvoie la position du héros et celle du monstre. Possibilité pour le perso de pas bouger.
-- Créer un monstre qui tue le personnage sans graphisme : déplacement aléatoire + tue le personnage si rencontre 
-Répartition des tâches
-- S41 : Adel (position et personnages)
-- S41-42 : Elina (plateau)
-- S41-42 : Elie (Héros et monstres)
-- S41-42-43 : Thomas (gestion du main, Objet et trésor)
-- S44 : retard+bonus
-- S45-46 : préparation sprint 2
+- GÃ©nÃ©rer un labyrintheÂ avec obstacles par dÃ©faut + trÃ©sor
+- Version texte du dÃ©placement guidÃ© par le terminal qui renvoie la position du hÃ©ros et celle du monstre. PossibilitÃ© pour le perso de pas bouger.
+- CrÃ©er un monstre qui tue le personnage sans graphismeÂ : dÃ©placement alÃ©atoire + tue le personnage si rencontre
+ 
+
+RÃ©partition des tÃ¢ches
+- S41Â : Adel (position et personnages)
+- S41-42Â : Elina (plateau)
+- S41-42Â : Elie (HÃ©ros et monstres)
+- S41-42-43Â : Thomas (gestion du main, Objet et trÃ©sor)
+- S44Â : retard+bonus
+- S45-46Â : prÃ©paration sprint 2
+
+RÃ©trospective:
+- Labyrinthe et obstacle par dÃ©fault ok + trÃ©sor alÃ©atoire
+- dÃ©placement ok. Si autre touche que D G H B le perso bouge pas et le monstre se dÃ©place quand mÃªme
+- monstre ok.
+- main renvoie position du monstre, trÃ©sors, hÃ©ros.
+- diagramme de classe mis Ã  jour
+- trÃ©sors et objets pour le moment vide (Ã  complÃ©ter plus tard)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SPRINT 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Backlog sprint 2:
+- plateau: obstacle alÃ©atoire + en fonction du niveau (taille fixe, nb d'obstacle qui change)
+- faire graphiquement le jeu
+- faire une classe si monstre attaque le perso perd des vie (diff monstres en fct du niveau 1 qui attaque et 1 qui traverse les murs+attaque)
+- faire pop un monstre de facon alÃ©atoire en respectant un pÃ©rimÃ¨tre autour du hÃ©ros
+- ajouter aussi un pÃ©rimÃ¨tre autour du trÃ©sor
+
+
+RÃ©partition des tÃ¢ches:
+- plateau: Elina
+- graphisme: Elie
+- pÃ©rimÃ¨tre: Adel
+- monstre: Thomas
+
+
+
+
+
 
 
 
