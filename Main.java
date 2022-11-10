@@ -9,7 +9,7 @@ public class Main {
 		int longueur=12;
 		int hauteur=12;
 		
-		Plateau p = new Plateau(longueur, hauteur);
+		Plateau p = new Plateau(longueur, hauteur, 2);
 		
 		ArrayList<Integer> coordTresor = new ArrayList<Integer>();
 		Tresor t = new Tresor(coordTresor);

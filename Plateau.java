@@ -2,15 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-
-
 public class Plateau {
 	Random random = new Random();
 	int nb1;
 	int nb2;
-	private int longeur; //déifinition de la longueur du plateau
-	private int hauteur; //définition de la hauteur du plateau
-	private int niveau; // définition du niveau 1 2 ou 3
+	private int longeur; //deifinition de la longueur du plateau
+	private int hauteur; //definition de la hauteur du plateau
+	private int niveau; // definition du niveau 1 2 ou 3
 	
 	private ArrayList<List<Integer>> plateau = new ArrayList<List<Integer>>(); //initialisation du plateau
 
@@ -25,7 +23,7 @@ public class Plateau {
 	}
 	
 //	public void obstacle() { 
-//		//crÃ©ation de la liste d'obstacle
+//		//creation de la liste d'obstacle
 //		obstacles.add(new ArrayList<Integer>());
 //		obstacles.get(0).add(9);
 //		obstacles.get(0).add(8);
@@ -44,11 +42,11 @@ public class Plateau {
 //		obstacles.add(new ArrayList<Integer>());
 //		obstacles.get(5).add(10);
 //		obstacles.get(5).add(10);
-//	}//création de la liste d'obstacles par défaut
+//	}//creation de la liste d'obstacles par defaut
 
 	
 	public void obstacle() { 
-		//détermination du nombre d'obstacles en fonction du niveau
+		//determination du nombre d'obstacles en fonction du niveau
 		int nbObstacles;
 		if (niveau==1) {
 			nbObstacles=7;
@@ -60,26 +58,26 @@ public class Plateau {
 			nbObstacles=20;
 		}
 		
-		//crÃ©ation de la liste d'obstacle
+		//creation de la liste d'obstacle
 		ArrayList<Integer> test= new ArrayList<Integer>();
 		for (int k=0;k<nbObstacles;k++) {
-			//création des coordonnées d'un obstacle hors des murs + test si il n'est pas déjà dans la liste d'obstacle
+			//creation des coordonnees d'un obstacle hors des murs + test si il n'est pas deja dans la liste d'obstacle
 			obstacles.add(new ArrayList<Integer>());
 			nb1=random.nextInt(hauteur-2)+1;
 			nb2=random.nextInt(longeur-2)+1;
 			test.add(nb1);
 			test.add(nb2);
 			while (obstacles.contains(test)) {
-				//on recherche un couple de coordonnées si celui trouvé avant est déjà dans la liste
+				//on recherche un couple de coordonnees si celui trouve avant est deja dans la liste
 				nb1=random.nextInt(hauteur-2)+1;
 				nb2=random.nextInt(longeur-2)+1;
 				}
-			//on ajoute l'obstacle à la liste obstacles
+			//on ajoute l'obstacle a la liste obstacles
 			obstacles.get(k).add(nb2);
 			obstacles.get(k).add(nb1);
 		}		
 		
-		//tri de la liste dans l'ordre croissants des abscisses et ordonnées
+		//tri de la liste dans l'ordre croissants des abscisses et ordonnees
         int taille = obstacles.size();  
         List<Integer> tmp = new ArrayList<Integer>();  
         for(int i1=0; i1 < taille; i1++) 
@@ -97,15 +95,15 @@ public class Plateau {
         }
    }
 
-	//création de la liste plateau par défault (le plateau est une liste des coordonnées sur lesquelles les personnages peuvent aller
+	//creation de la liste plateau par default (le plateau est une liste des coordonnees sur lesquelles les personnages peuvent aller
 		
 	public void creationPlateau(){ 	
 		int z=0;
-		for(int i=1; i<hauteur-1; i++) {			 			//crÃ©ation du plateau avec toutes les valeurs sans obstacle et sans les murs
+		for(int i=1; i<hauteur-1; i++) {			 			//creation du plateau avec toutes les valeurs sans obstacle et sans les murs
             for(int j=1; j<longeur-1; j++) {
-            	plateau.add(new ArrayList<Integer>());				//initialisation de nouvelles coordonnées
-           	 	plateau.get(z).add(i);					//ajout de la coordoonÃ©e x
-           	 	plateau.get(z).add(j);					//ajoute de la coordonnÃ©e y
+            	plateau.add(new ArrayList<Integer>());				//initialisation de nouvelles coordonnees
+           	 	plateau.get(z).add(i);					//ajout de la coordoonee x
+           	 	plateau.get(z).add(j);					//ajoute de la coordonnee y
            	 	z+=1;										// comptage de la longeur de la liste plateau
            	}
 		}
@@ -141,5 +139,13 @@ public class Plateau {
 	
 	public ArrayList<List<Integer>> getObstacles() {
 		return obstacles;
+	}
+
+	public int getLongeur() {
+		return longeur;
+	}
+
+	public int getHauteur() {
+		return hauteur;
 	}
 }
