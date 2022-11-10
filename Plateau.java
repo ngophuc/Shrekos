@@ -1,45 +1,103 @@
-package Source;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
+
 
 public class Plateau {
-	
+	Random random = new Random();
+	int nb1;
+	int nb2;
 	private int longeur; //déifinition de la longueur du plateau
 	private int hauteur; //définition de la hauteur du plateau
+	private int niveau; // définition du niveau 1 2 ou 3
 	
 	private ArrayList<List<Integer>> plateau = new ArrayList<List<Integer>>(); //initialisation du plateau
 
 	private ArrayList<List<Integer>> obstacles = new ArrayList<List<Integer>>(); //initialisation des obstacles
 	
-	public Plateau(int longeur, int hauteur) {
+	public Plateau(int longeur, int hauteur,int niveau) {
 		this.hauteur=hauteur;
 		this.longeur=longeur;
+		this.niveau=niveau;
 		ajoutObstacle();
 
 	}
 	
+//	public void obstacle() { 
+//		//crÃ©ation de la liste d'obstacle
+//		obstacles.add(new ArrayList<Integer>());
+//		obstacles.get(0).add(9);
+//		obstacles.get(0).add(8);
+//		obstacles.add(new ArrayList<Integer>());
+//		obstacles.get(1).add(9);
+//		obstacles.get(1).add(9);
+//		obstacles.add(new ArrayList<Integer>());
+//		obstacles.get(2).add(9);
+//		obstacles.get(2).add(10);
+//		obstacles.add(new ArrayList<Integer>());
+//		obstacles.get(3).add(10);
+//		obstacles.get(3).add(8);
+//		obstacles.add(new ArrayList<Integer>());
+//		obstacles.get(4).add(10);
+//		obstacles.get(4).add(9);
+//		obstacles.add(new ArrayList<Integer>());
+//		obstacles.get(5).add(10);
+//		obstacles.get(5).add(10);
+//	}//création de la liste d'obstacles par défaut
+
+	
 	public void obstacle() { 
+		//détermination du nombre d'obstacles en fonction du niveau
+		int nbObstacles;
+		if (niveau==1) {
+			nbObstacles=7;
+		}
+		else if (niveau==2) {
+			nbObstacles=15;
+		}
+		else {
+			nbObstacles=20;
+		}
+		
 		//crÃ©ation de la liste d'obstacle
-		obstacles.add(new ArrayList<Integer>());
-		obstacles.get(0).add(9);
-		obstacles.get(0).add(8);
-		obstacles.add(new ArrayList<Integer>());
-		obstacles.get(1).add(9);
-		obstacles.get(1).add(9);
-		obstacles.add(new ArrayList<Integer>());
-		obstacles.get(2).add(9);
-		obstacles.get(2).add(10);
-		obstacles.add(new ArrayList<Integer>());
-		obstacles.get(3).add(10);
-		obstacles.get(3).add(8);
-		obstacles.add(new ArrayList<Integer>());
-		obstacles.get(4).add(10);
-		obstacles.get(4).add(9);
-		obstacles.add(new ArrayList<Integer>());
-		obstacles.get(5).add(10);
-		obstacles.get(5).add(10);
-	}//création de la liste d'obstacles par défaut
+		ArrayList<Integer> test= new ArrayList<Integer>();
+		for (int k=0;k<nbObstacles;k++) {
+			//création des coordonnées d'un obstacle hors des murs + test si il n'est pas déjà dans la liste d'obstacle
+			obstacles.add(new ArrayList<Integer>());
+			nb1=random.nextInt(hauteur-2)+1;
+			nb2=random.nextInt(longeur-2)+1;
+			test.add(nb1);
+			test.add(nb2);
+			while (obstacles.contains(test)) {
+				//on recherche un couple de coordonnées si celui trouvé avant est déjà dans la liste
+				nb1=random.nextInt(hauteur-2)+1;
+				nb2=random.nextInt(longeur-2)+1;
+				}
+			//on ajoute l'obstacle à la liste obstacles
+			obstacles.get(k).add(nb2);
+			obstacles.get(k).add(nb1);
+		}		
+		
+		//tri de la liste dans l'ordre croissants des abscisses et ordonnées
+        int taille = obstacles.size();  
+        List<Integer> tmp = new ArrayList<Integer>();  
+        for(int i1=0; i1 < taille; i1++) 
+        {
+                for(int j1=1; j1 < (taille-i1); j1++)
+                {  
+                        if((obstacles.get(j1-1).get(0) > obstacles.get(j1).get(0))||((obstacles.get(j1-1).get(0) == obstacles.get(j1).get(0))&&(obstacles.get(j1-1).get(1) > obstacles.get(j1).get(1))))
+                        {
+                                //echanges des elements
+                                tmp = obstacles.get(j1-1);  
+                                obstacles.set(j1-1,obstacles.get(j1));  
+                                obstacles.set(j1,tmp);  
+                        } 
+                }
+        }
+   }
+
+	//création de la liste plateau par défault (le plateau est une liste des coordonnées sur lesquelles les personnages peuvent aller
 		
 	public void creationPlateau(){ 	
 		int z=0;
@@ -53,6 +111,7 @@ public class Plateau {
 		}
 	}
 	
+	//suppression des obstacles au plateau
 	public void ajoutObstacle(){
 		int compteur;
 		int reduction=0;
