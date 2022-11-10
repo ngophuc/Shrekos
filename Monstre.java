@@ -1,7 +1,6 @@
 package Source;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Monstre extends Personnage {
@@ -30,14 +29,5 @@ public class Monstre extends Personnage {
 		else {					// Le monstre ne bouge pas
 		}
 		return position(cmd);
-	}
-	
-	public void deplacementMonstre(ArrayList<List<Integer>> plateau) {
-		ArrayList<Integer> testCoord;
-		do {
-			testCoord=positionMonstre();
-		}
-		while (mouvPossible(plateau, testCoord)==false);
-		setCoord(testCoord);
 	}
 }

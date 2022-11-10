@@ -5,52 +5,59 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-
-		// initialisation de la taille du plateau
-		int longeur=12;
+		
+		int longueur=12;
 		int hauteur=12;
 		
-		// initialisation des objets plateau, monstre, tresor et de leurs coord
-		Plateau p = new Plateau(longeur, hauteur);
+		Plateau p = new Plateau(longueur, hauteur);
 		
 		ArrayList<Integer> coordTresor = new ArrayList<Integer>();
 		Tresor t = new Tresor(coordTresor);
-		t.positionAleatoire(longeur, hauteur, p.getPlateau());	
-		
-		ArrayList<Integer> coordMonstre = new ArrayList<Integer>();
-		Monstre m = new Monstre(coordMonstre,1,1);
-		m.positionAleatoire(longeur, hauteur, p.getPlateau());
+		t.positionAleatoire(longueur, hauteur, p.getPlateau());
 		
 		ArrayList<Integer> coordHeros = new ArrayList<Integer>();
-		Hero h = new Hero(coordHeros,1,1);
-		h.positionAleatoire(longeur, hauteur, p.getPlateau());
+		Hero h = new Hero(coordHeros,2,1);
+		h.positionAleatoire(longueur, hauteur, p.getPlateau());
 		
-		// on peut jouer tant que le hero a de la vie et qu'il n'est pas sur la case tresor
+		ArrayList<Integer> coordZombie = new ArrayList<Integer>();
+		Zombie z = new Zombie(coordZombie,1,1);
+		z.positionAleatoire(longueur, hauteur, p.getPlateau());
+		
+		ArrayList<Integer> coordFantome = new ArrayList<Integer>();
+		Fantome f = new Fantome(coordFantome,1,1);
+		f.positionAleatoire(longueur, hauteur, p.getPlateau());
+	
 		while (h.getVie()!=0 && !(t.getCoord().equals(h.getCoord()))) {
-			// affichage des coord
+			System.out.println("Obstacles : \t"+p.getObstacles());
 			System.out.println("Heros : \t"+h.getCoord());
-			System.out.println("Monstre : \t"+m.getCoord());
+			System.out.println("Zombie : \t"+z.getCoord());
+			System.out.println("Fantome : \t"+f.getCoord());
 			System.out.println("Tresor : \t"+t.getCoord());
-			// modification des coord de monstre et hero
-			m.deplacementMonstre(p.getPlateau());
-			h.deplacementHero(p.getPlateau());
-			// si les coord de hero sont les memes que monstre alors hero perd de la vie
-			if (m.getCoord().equals(h.getCoord())) {
-				h.setVie(h.getVie()-m.getAttaque());
+			f.deplacementFantome(p);
+			z.deplacementZombie(p.getPlateau());
+			//h.deplacementHero(p.getPlateau());
+			if (z.getCoord().equals(h.getCoord())) {
+				h.setVie(h.getVie()-z.getAttaque());
+				z.setVie(z.getVie()-h.getAttaque());
 				System.out.println("Aie ta vie : \t"+h.getVie());
 			}
+			if (f.getCoord().equals(h.getCoord())) {
+				h.setVie(h.getVie()-f.getAttaque());
+				f.setVie(f.getVie()-h.getAttaque());
+				System.out.println("Aie ta vie : \t"+h.getVie());
+			}
+			System.out.println();
+
 		}
-		
 		System.out.println("Heros : \t"+h.getCoord());
-		System.out.println("Monstre : \t"+m.getCoord());
+		System.out.println("Zombie : \t"+z.getCoord());
+		System.out.println("Fantome : \t"+f.getCoord());
 		System.out.println("Tresor : \t"+t.getCoord());
-		
-		// annonce si le hero n'a plus de vie et qu'il a donc perdu
+				
 		if (h.getVie()==0) {
 			System.out.println("GAME OVER");
 		}
 		
-		// annonce si le hero a les memes coord que tresor et qu'il a donc gagne
 		if (t.getCoord().equals(h.getCoord())) {
 			System.out.println("WIN");
 		}
