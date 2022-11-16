@@ -11,3 +11,11 @@ supprimer un tag:
 créer un tag:
 git tag -d <name>
 git push --tags
+
+ 
+---
+ 
+> Questions/Remarques :
+> - Diagramme de classes : généralisation dans sens invers, certaines classes comme "fantome, zoombie" ne sont pas dans le diagramme de classes 
+> - pourquoi "coord" est un arrayList ? 
+> - Je ne comprend pas les déplacements des pers/hero/monstres
